@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{88665dfa-87dd-415e-a01f-9839f42ab762}</ProjectGuid>
+    <RootNamespace>openpostpro</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IntDir>$(OutDir)obj\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IntDir>$(OutDir)obj\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>$(ProjectDir)copy_libs_output.bat</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>$(ProjectDir)lib\glfw\glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PreBuildEvent>
+      <Command>$(ProjectDir)copy_libs_output.bat</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp20</LanguageStandard>
+      <AdditionalIncludeDirectories>$(ProjectDir)src\third\IMGUI_third\ImGuiColortextEdit;$(ProjectDir)src\test;$(ProjectDir)src\ui;$(ProjectDir)src\common;$(ProjectDir)src\third\;$(ProjectDir)src\third\IMGUI;$(ProjectDir)src\third\IMGUI\backends;$(ProjectDir)src\cad;$(ProjectDir)src\postpro;$(ProjectDir)src\script;$(ProjectDir)src\cam;$(ProjectDir)src\python;$(ProjectDir)src\third\GLM\;$(ProjectDir)src\third\gl3w\;$(ProjectDir)src\third\stb\;$(ProjectDir)src\third\freetype;$(ProjectDir)src\third\siglot;$(ProjectDir)src\third\python\313;$(ProjectDir)postcallback;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;gdi32.lib;freetype.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib\freetype\;$(ProjectDir)lib\glfw\;$(ProjectDir)lib\python\;$(TargetDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <ManifestFile>$(OutDir)$(TargetName)$(TargetExt).intermediate.manifest</ManifestFile>
+      <IncrementalLinkDatabaseFile>$(OutDir)$(TargetName).ilk</IncrementalLinkDatabaseFile>
+      <LinkTimeCodeGenerationObjectFile>$(OutDir)$(TargetName).iobj</LinkTimeCodeGenerationObjectFile>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+    <PreBuildEvent>
+      <Command>$(ProjectDir)copy_libs_output.bat</Command>
+    </PreBuildEvent>
+    <BuildLog>
+      <Path>$(OutDir)$(MSBuildProjectName).log</Path>
+    </BuildLog>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;_WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(ProjectDir)src\third\IMGUI_third\ImGuiColortextEdit;$(ProjectDir)src\test;$(ProjectDir)src\ui;$(ProjectDir)src\common;$(ProjectDir)src\third\;$(ProjectDir)src\third\IMGUI;$(ProjectDir)src\third\IMGUI\backends;$(ProjectDir)src\cad;$(ProjectDir)src\postpro;$(ProjectDir)src\script;$(ProjectDir)src\cam;$(ProjectDir)src\python;$(ProjectDir)src\third\GLM\;$(ProjectDir)src\third\gl3w\;$(ProjectDir)src\third\stb\;$(ProjectDir)src\third\freetype;$(ProjectDir)src\third\siglot;$(ProjectDir)src\third\python\313;$(ProjectDir)postcallback;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EntryPointSymbol>mainCRTStartup</EntryPointSymbol>
+      <AdditionalDependencies>opengl32.lib;glfw3.lib;gdi32.lib;freetype.lib;</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(ProjectDir)lib\freetype\;$(ProjectDir)lib\glfw\;$(ProjectDir)lib\python\;$(TargetDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+    <PreBuildEvent>
+      <Command>$(ProjectDir)copy_libs_output.bat</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="postpro\generic_mill.py">
+      <FileType>Document</FileType>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</ExcludedFromBuild>
+    </None>
+    <None Include="postpro\generic_plasma.py" />
+    <None Include="postpro\generic_plasma.py_">
+      <FileType>Document</FileType>
+    </None>
+    <ClCompile Include="src\cad\arc.cpp" />
+    <ClCompile Include="src\cad\cad.cpp" />
+    <ClCompile Include="src\cad\circle.cpp" />
+    <ClCompile Include="openpostpro.cpp" />
+    <ClCompile Include="src\cad\ellipse.cpp" />
+    <ClCompile Include="src\cad\graphic.cpp" />
+    <ClCompile Include="src\cad\point.cpp" />
+    <ClCompile Include="src\cad\polyline.cpp" />
+    <ClCompile Include="src\cad\anchor.cpp" />
+    <ClCompile Include="src\cad\document.cpp" />
+    <ClCompile Include="src\cad\layer.cpp" />
+    <ClCompile Include="src\cad\line.cpp" />
+    <ClCompile Include="src\cad\shape.cpp" />
+    <ClCompile Include="src\cad\spline.cpp" />
+    <ClCompile Include="src\cad\text.cpp" />
+    <ClCompile Include="src\cam\drill.cpp" />
+    <ClCompile Include="src\cam\follow.cpp" />
+    <ClCompile Include="src\cam\moveTo.cpp" />
+    <ClCompile Include="src\cam\offset.cpp" />
+    <ClCompile Include="src\cam\pocket.cpp" />
+    <ClCompile Include="src\cam\spiral.cpp" />
+    <ClCompile Include="src\cam\toolpath.cpp" />
+    <ClCompile Include="src\cam\group.cpp" />
+    <ClCompile Include="src\common\clipboard.cpp" />
+    <ClCompile Include="src\common\curve.cpp" />
+    <ClCompile Include="src\common\dialog.cpp" />
+    <ClCompile Include="src\common\environment.cpp" />
+    <ClCompile Include="src\common\file.cpp" />
+    <ClCompile Include="src\common\font.cpp" />
+    <ClCompile Include="src\common\geometry.cpp" />
+    <ClCompile Include="src\common\history.cpp" />
+    <ClCompile Include="src\common\inifile.cpp" />
+    <ClCompile Include="src\common\lang.cpp" />
+    <ClCompile Include="src\common\logger.cpp" />
+    <ClCompile Include="src\common\strings.cpp" />
+    <ClCompile Include="src\import\dxf.cpp" />
+    <ClCompile Include="src\import\dxfloader.cpp" />
+    <ClCompile Include="src\postpro\postpro.cpp" />
+    <ClCompile Include="src\python\script.cpp" />
+    <ClCompile Include="src\script\cad_script.cpp" />
+    <ClCompile Include="src\test\test_cad.cpp" />
+    <ClCompile Include="src\third\gl3w\GL\gl3w.c" />
+    <ClCompile Include="src\third\IMGUI\backends\imgui_impl_glfw.cpp" />
+    <ClCompile Include="src\third\IMGUI\backends\imgui_impl_opengl3.cpp" />
+    <ClCompile Include="src\third\IMGUI\imgui.cpp" />
+    <ClCompile Include="src\third\IMGUI\imgui_draw.cpp" />
+    <ClCompile Include="src\third\IMGUI\imgui_tables.cpp" />
+    <ClCompile Include="src\third\IMGUI\imgui_widgets.cpp" />
+    <ClCompile Include="src\third\IMGUI_third\ImGuiColorTextEdit\TextEditor.cpp" />
+    <ClCompile Include="src\ui\application.cpp" />
+    <ClCompile Include="src\ui\camera.cpp" />
+    <ClCompile Include="src\ui\config.cpp" />
+    <ClCompile Include="src\ui\message_box.cpp" />
+    <ClCompile Include="src\ui\mod_cad.cpp" />
+    <ClCompile Include="src\ui\mod_log.cpp" />
+    <ClCompile Include="src\ui\mod_output.cpp" />
+    <ClCompile Include="src\ui\mod_script.cpp" />
+    <ClCompile Include="src\ui\ortho_cam.cpp" />
+    <ClCompile Include="src\ui\renderer.cpp" />
+    <ClCompile Include="src\ui\renderer_opengl.cpp" />
+    <ClCompile Include="src\ui\window.cpp" />
+    <None Include="postpro\postcore.py" />
+    <None Include="script\cadcore.py" />
+    <None Include="script\oblong.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\cad\arc.h" />
+    <ClInclude Include="src\cad\cad.h" />
+    <ClInclude Include="src\cad\circle.h" />
+    <ClInclude Include="src\cad\ellipse.h" />
+    <ClInclude Include="src\cad\point.h" />
+    <ClInclude Include="src\cad\polyline.h" />
+    <ClInclude Include="src\cad\anchor.h" />
+    <ClInclude Include="src\cad\document.h" />
+    <ClInclude Include="src\cad\graphic.h" />
+    <ClInclude Include="src\cad\layer.h" />
+    <ClInclude Include="src\cad\line.h" />
+    <ClInclude Include="src\cad\shape.h" />
+    <ClInclude Include="src\cad\spline.h" />
+    <ClInclude Include="src\cad\text.h" />
+    <ClInclude Include="src\cam\drill.h" />
+    <ClInclude Include="src\cam\follow.h" />
+    <ClInclude Include="src\cam\moveTo.h" />
+    <ClInclude Include="src\cam\offset.h" />
+    <ClInclude Include="src\cam\pocket.h" />
+    <ClInclude Include="src\cam\spiral.h" />
+    <ClInclude Include="src\cam\toolpath.h" />
+    <ClInclude Include="src\cam\group.h" />
+    <ClInclude Include="src\common\clipboard.h" />
+    <ClInclude Include="src\common\curve.h" />
+    <ClInclude Include="src\common\date.h" />
+    <ClInclude Include="src\common\directory.h" />
+    <ClInclude Include="src\common\environment.h" />
+    <ClInclude Include="src\common\file.h" />
+    <ClInclude Include="src\common\dialog.h" />
+    <ClInclude Include="src\common\font.h" />
+    <ClInclude Include="src\common\ftree.h" />
+    <ClInclude Include="src\common\geometry.h" />
+    <ClInclude Include="src\common\history.h" />
+    <ClInclude Include="src\common\inifile.h" />
+    <ClInclude Include="src\common\lang.h" />
+    <ClInclude Include="src\common\logger.h" />
+    <ClInclude Include="src\common\strings.h" />
+    <ClInclude Include="src\import\dxf.h" />
+    <ClInclude Include="src\import\dxfloader.h" />
+    <ClInclude Include="src\postpro\postpro.h" />
+    <ClInclude Include="src\python\script.h" />
+    <ClInclude Include="src\script\cad_script.h" />
+    <ClInclude Include="src\test\test_cad.h" />
+    <ClInclude Include="src\third\GLFW\glfw3.h" />
+    <ClInclude Include="src\third\GLFW\glfw3native.h" />
+    <ClInclude Include="src\third\IMGUI\backends\imgui_impl_glfw.h" />
+    <ClInclude Include="src\third\IMGUI\backends\imgui_impl_opengl3.h" />
+    <ClInclude Include="src\third\IMGUI\imconfig.h" />
+    <ClInclude Include="src\third\IMGUI\imgui.h" />
+    <ClInclude Include="src\third\IMGUI\imgui_internal.h" />
+    <ClInclude Include="src\third\IMGUI\imstb_rectpack.h" />
+    <ClInclude Include="src\third\IMGUI\imstb_textedit.h" />
+    <ClInclude Include="src\third\IMGUI\imstb_truetype.h" />
+    <ClInclude Include="src\third\IMGUI_third\ImGuiColorTextEdit\TextEditor.h" />
+    <ClInclude Include="src\ui\application.h" />
+    <ClInclude Include="src\ui\camera.h" />
+    <ClInclude Include="src\ui\config.h" />
+    <ClInclude Include="src\ui\message_box.h" />
+    <ClInclude Include="src\ui\module.h" />
+    <ClInclude Include="src\ui\mod_cad.h" />
+    <ClInclude Include="src\ui\mod_log.h" />
+    <ClInclude Include="src\ui\mod_output.h" />
+    <ClInclude Include="src\ui\mod_script.h" />
+    <ClInclude Include="src\ui\ortho_cam.h" />
+    <ClInclude Include="src\ui\renderer.h" />
+    <ClInclude Include="src\ui\renderer_opengl.h" />
+    <ClInclude Include="src\ui\window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="lang\en-uk.txt" />
+    <Text Include="lang\en-us.txt" />
+    <Text Include="lang\es-es.txt" />
+    <Text Include="lang\fr-fr.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
